@@ -7,13 +7,14 @@
 """ training utils
 """
 import pandas as pd
+import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import learning_curve, ShuffleSplit
+from sklearn.model_selection import learning_curve, StratifiedShuffleSplit
 from sklearn.metrics import roc_auc_score, make_scorer
 
-from utils.log import logger, logthis
+from log import logger, logthis
 extra_args = { "funcname_override" : "print"}
 
 
@@ -24,65 +25,48 @@ def plot_learning_curve(estimator, scoring, X, y, axes=None, ylim=None, cv=None,
         samples vs fit times curve, the fit times vs score curve.
     """
     if axes is None:
-        _, axes = plt.subplots(1, 3, figsize=(20, 5))
-
-    # axes[0].set_title("Learning Curves")
-    # if ylim is not None:
-    #     axes[0].set_ylim(*ylim)
-    # axes[0].set_xlabel("Training examples")
-    # axes[0].set_ylabel("Score")
+        _, axes = plt.subplots(1, 2, figsize=(10, 5))
 
     train_sizes, train_scores, test_scores, fit_times, _ = \
         learning_curve(estimator, X, y, cv=cv, n_jobs=n_jobs,
                        train_sizes=train_sizes,
                        scoring=scoring,
                        return_times=True)
-    train_scores_mean = np.mean(train_scores, axis=1)
-    train_scores_std = np.std(train_scores, axis=1)
-    test_scores_mean = np.mean(test_scores, axis=1)
-    test_scores_std = np.std(test_scores, axis=1)
-    fit_times_mean = np.mean(fit_times, axis=1)
-    fit_times_std = np.std(fit_times, axis=1)
 
     # learning curves
-    axes[0].grid()
-    axes[0].fill_between(train_sizes, train_scores_mean - train_scores_std,
-                         train_scores_mean + train_scores_std, alpha=0.1,
-                         color="r")
-    axes[0].fill_between(train_sizes, test_scores_mean - test_scores_std,
-                         test_scores_mean + test_scores_std, alpha=0.1,
-                         color="g")
-    axes[0].plot(train_sizes, train_scores_mean, 'o-', color="r",
-                 label="Training score")
-    axes[0].plot(train_sizes, test_scores_mean, 'o-', color="g",
-                 label="Cross-validation score")
-    axes[0].legend(loc="best")
+    sns.set_theme()
+    sizes = np.tile(train_sizes,10)
+    sizes.sort()
+    df = pd.concat([pd.DataFrame({"Sample size":sizes, "Score":train_scores.reshape(-1), "Set":"train"}),
+                    pd.DataFrame({"Sample size":sizes, "Score":test_scores.reshape(-1), "Set":"CV"})])
+    sns.lineplot(data=df, 
+                 x="Sample size",
+                 y="Score",
+                 hue="Set", 
+                 ci=95, 
+                 marker="o",
+                 ax=axes[0]).set_title("LC")
 
     # n_samples vs fit_times
-    axes[1].grid()
-    axes[1].plot(train_sizes, fit_times_mean, 'o-')
-    axes[1].fill_between(train_sizes, fit_times_mean - fit_times_std,
-                         fit_times_mean + fit_times_std, alpha=0.1)
-    axes[1].set_xlabel("Training examples")
-    axes[1].set_ylabel("fit_times")
-    axes[1].set_title("Scalability")
+    sns.lineplot(data=pd.DataFrame({"Sample size":sizes, "Fitting time":fit_times.reshape(-1)}),
+                 x="Sample size", 
+                 y="Fitting time", 
+                 ci=95, 
+                 marker="o",
+                 ax=axes[1]).set_title("Scalability")
 
-    # fit_time vs score
-    axes[2].grid()
-    axes[2].plot(fit_times_mean, test_scores_mean, 'o-')
-    axes[2].fill_between(fit_times_mean, test_scores_mean - test_scores_std,
-                         test_scores_mean + test_scores_std, alpha=0.1)
-    axes[2].set_xlabel("fit_times")
-    axes[2].set_ylabel("Score")
-    axes[2].set_title("Performance")
-
-    return plt
+    # return plt
 
 
 
 
-
-
+cv = StratifiedShuffleSplit(n_splits=10, test_size=0.2, random_state=0)
+estimator = LogisticRegression(C=100, class_weight="balanced")
+df = pd.read_csv("assets/assignment/case_study_scoring_clean.csv", sep=";")
+X = df.drop(["opportunity_stage_after_30_days"],axis=1).values
+y = df.opportunity_stage_after_30_days.values
+plot_learning_curve(estimator,make_scorer(roc_auc_score), X, y, cv=cv, n_jobs=4)
+plt.show()
 
 
 
@@ -149,7 +133,7 @@ def validate(X_test, y_test, nlp):
 fig, axes = plt.subplots(1, 3, figsize=(30, 5))
 
 
-cv = ShuffleSplit(n_splits=10, test_size=0.1, random_state=0)
+cv = StratifiedShuffleSplit(n_splits=10, test_size=0.2, random_state=0)
 estimator = LogisticRegression(C=100, class_weight="balanced")
 df = pd.read_csv("assets/assignment/case_study_scoring_clean.csv", sep=";")
 X = df.drop(["opportunity_stage_after_30_days"],axis=1).values
