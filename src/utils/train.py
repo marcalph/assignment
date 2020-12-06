@@ -15,12 +15,12 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import learning_curve, StratifiedShuffleSplit
 from sklearn.metrics import roc_auc_score, make_scorer, confusion_matrix
 
-from log import logger, logthis
+from utils.log import logger, logthis
 extra_args = { "funcname_override" : "print"}
 
 
 @logthis
-def plot_learning_curve(clf, scoring, X, y, axes=None, ylim=None, cv=None,
+def plot_learning_curves(clf, scoring, X, y, axes=None, ylim=None, cv=None,
                         n_jobs=None, train_sizes=np.linspace(.1, 1.0, 5)):
     """ Generate 3 plots: the test and training learning curve, the training
         samples vs fit times curve, the fit times vs score curve.
@@ -58,12 +58,12 @@ def plot_learning_curve(clf, scoring, X, y, axes=None, ylim=None, cv=None,
     plt.show()
 
 
-sss = StratifiedShuffleSplit(n_splits=10, test_size=0.2, random_state=0)
-clf = LogisticRegression(C=100, class_weight="balanced")
-df = pd.read_csv("assets/assignment/case_study_scoring_clean.csv", sep=";")
-X = df.drop(["opportunity_stage_after_30_days"],axis=1).values
-y = df.opportunity_stage_after_30_days.values
-plot_learning_curve(clf,make_scorer(roc_auc_score), X, y, cv=sss, n_jobs=4)
+# sss = StratifiedShuffleSplit(n_splits=10, test_size=0.2, random_state=0)
+# clf = LogisticRegression(C=100, class_weight="balanced")
+# df = pd.read_csv("assets/assignment/case_study_scoring_clean.csv", sep=";")
+# X = df.drop(["opportunity_stage_after_30_days"],axis=1).values
+# y = df.opportunity_stage_after_30_days.values
+# plot_learning_curves(clf,make_scorer(roc_auc_score), X, y, cv=sss, n_jobs=4)
 
 
 
@@ -103,13 +103,13 @@ def generate_incorrect_report(incorrect_list, columns):
     profile.to_file("assets/wip/report_incorrect.html")
 
 
-sss = StratifiedShuffleSplit(n_splits=10, test_size=0.2, random_state=0)
-clf = LogisticRegression(C=100, class_weight="balanced")
-df = pd.read_csv("assets/assignment/case_study_scoring_clean.csv", sep=";")
-X = df.drop(["opportunity_stage_after_30_days"],axis=1).values
-y = df.opportunity_stage_after_30_days.values
-incorrect = most_incorrect(clf, X, y, sss)
-generate_incorrect_report(incorrect, df.columns)
+# sss = StratifiedShuffleSplit(n_splits=10, test_size=0.2, random_state=0)
+# clf = LogisticRegression(C=100, class_weight="balanced")
+# df = pd.read_csv("assets/assignment/case_study_scoring_clean.csv", sep=";")
+# X = df.drop(["opportunity_stage_after_30_days"],axis=1).values
+# y = df.opportunity_stage_after_30_days.values
+# incorrect = most_incorrect(clf, X, y, sss)
+# generate_incorrect_report(incorrect, df.columns)
 
 
 
@@ -143,12 +143,12 @@ def cv_confusion_matrix(clf, X, y, shuffle_split_strategy, normalize=False):
     plt.show()    
 
 
-sss = StratifiedShuffleSplit(n_splits=10, test_size=0.2, random_state=0)
-clf = LogisticRegression(C=100, class_weight="balanced")
-df = pd.read_csv("assets/assignment/case_study_scoring_clean.csv", sep=";")
-X = df.drop(["opportunity_stage_after_30_days"],axis=1).values
-y = df.opportunity_stage_after_30_days.values
-cv_confusion_matrix(clf, X, y, sss)
+# sss = StratifiedShuffleSplit(n_splits=10, test_size=0.2, random_state=0)
+# clf = LogisticRegression(C=100, class_weight="balanced")
+# df = pd.read_csv("assets/assignment/case_study_scoring_clean.csv", sep=";")
+# X = df.drop(["opportunity_stage_after_30_days"],axis=1).values
+# y = df.opportunity_stage_after_30_days.values
+# cv_confusion_matrix(clf, X, y, sss)
 
 
 

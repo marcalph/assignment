@@ -12,12 +12,17 @@ import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import RepeatedKFold, train_test_split, StratifiedShuffleSplit, RepeatedStratifiedKFold, GridSearchCV
 from sklearn.metrics import roc_auc_score, make_scorer
+import click
 import joblib
+
+from utils.train import plot_learning_curves
 
 from utils.log import logger, logthis
 extra_args = { "funcname_override" : "print"}
 
 np.random.seed(42)
+
+
 
 @logthis
 def search_baseline(df, shuffle_split_strategy):
@@ -67,7 +72,6 @@ def nonnested_search_baseline(df, shuffle_split_strategy):
 
 
 
-
 @logthis
 def train_simple(df):
     """ train and serialize simple estimator
@@ -80,7 +84,22 @@ def train_simple(df):
 
 
 
-if __name__ == "__main__":
+@click.command()
+@click.option("--search", is_flag=True)
+@click.option("--diagnose", is_flag=True)
+def main(**kwargs):
     df = pd.read_csv("assets/assignment/case_study_scoring_clean.csv", sep=";")
-    sss = RepeatedKFold(n_splits=5, n_repeats=2, random_state=42)
-    search_baseline(df, sss)
+    sss = StratifiedShuffleSplit(n_splits=10, test_size=.2, random_state=42)
+    X = df.drop(["opportunity_stage_after_30_days"],axis=1).values
+    y = df.opportunity_stage_after_30_days.values    
+    clf = LogisticRegression(C=100, class_weight="balanced")
+    if kwargs['search']:
+        print("search")
+    if kwargs['diagnose']:
+        print("diagnose")
+
+
+
+if __name__ == "__main__":
+    main()
+
