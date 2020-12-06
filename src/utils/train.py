@@ -55,95 +55,28 @@ def plot_learning_curve(estimator, scoring, X, y, axes=None, ylim=None, cv=None,
                  marker="o",
                  ax=axes[1]).set_title("Scalability")
 
-    # return plt
+
+
+@logthis
+def cv_classification_report():
+    """ generate a cross validated classification report
+    """    
+    pass
 
 
 
+@logthis
+def cv_confusion_matrix():
+    """ compute a cross validated confusion matrix
+    """
+    pass
 
-cv = StratifiedShuffleSplit(n_splits=10, test_size=0.2, random_state=0)
+
+
+sss = StratifiedShuffleSplit(n_splits=10, test_size=0.2, random_state=0)
 estimator = LogisticRegression(C=100, class_weight="balanced")
 df = pd.read_csv("assets/assignment/case_study_scoring_clean.csv", sep=";")
 X = df.drop(["opportunity_stage_after_30_days"],axis=1).values
 y = df.opportunity_stage_after_30_days.values
-plot_learning_curve(estimator,make_scorer(roc_auc_score), X, y, cv=cv, n_jobs=4)
+plot_learning_curve(estimator,make_scorer(roc_auc_score), X, y, cv=sss, n_jobs=4)
 plt.show()
-
-
-
-def create_confusion_matrix(model="cnn_spacy"):
-    '''
-    Script to create a confusion matrix
-    '''
-    dataframe = pd.read_pickle(f'/app/assets/data/test/predicted_data_{model}.pkl')
-
-    dataframe[model] = dataframe[model].apply(convert_prediction_to_label, model=model)
-
-    fig = plt.figure(figsize=(38.40, 21.60), dpi=100)
-    y_true = np.array([np.array(x) for x in dataframe['label']]).astype(np.int8)
-    y_pred = np.array([np.array(x) for x in dataframe[model]]).astype(np.int8)
-
-    print(y_pred)
-    print(type(y_pred))
-    print(y_pred.dtype)
-
-    class_names = LIST_INTENTION_FINAL
-
-    conf_mat = multilabel_confusion_matrix(y_true, y_pred, labels=class_names).T
-
-    df_cm = pd.DataFrame(
-            conf_mat/conf_mat.sum(axis=1)[:, np.newaxis], index=class_names, columns=class_names
-        )
-    print(df_cm)
-
-    heatmap = sns.heatmap(df_cm, annot=True, fmt=".1%", annot_kws={"size": 10}, cmap="coolwarm")#sns.light_palette((210, 90, 60), input="husl"))
-
-    heatmap.yaxis.set_ticklabels(heatmap.yaxis.get_ticklabels(), rotation=0, ha='right', fontsize=6)
-    heatmap.xaxis.set_ticklabels(heatmap.xaxis.get_ticklabels(), rotation=45, ha='right', fontsize=6)
-    plt.xlabel('True label')
-    plt.ylabel('Predicted label')
-    plt.savefig(f'app/stats/confmat_norm_{model}.png')
-
-
-def validate(X_test, y_test, nlp):
-    logger.info("start validation")
-    df = pd.DataFrame()
-    df["text"] = X_test
-    df["target"] = y_test
-    df["pred_label"] = X_test.apply(lambda x: nlp(x).cats)
-    df["pred_target"] = df.pred_label.apply(encode_pred_label)
-    logger.warn(df.head())
-    logger.info("prediction on test data done")
-    y_test = np.vstack(df.target)
-    y_pred = np.vstack(df.pred_target)
-    logger.info(y_test.shape)
-    logger.info(y_pred.shape)
-    logger.info(INTENTS)
-    class_names = INTENTS
-    logger.info("start classification report generation")
-    return classification_report(y_test, y_pred, target_names=class_names)
-
-
-
-
-
-
-
-
-
-fig, axes = plt.subplots(1, 3, figsize=(30, 5))
-
-
-cv = StratifiedShuffleSplit(n_splits=10, test_size=0.2, random_state=0)
-estimator = LogisticRegression(C=100, class_weight="balanced")
-df = pd.read_csv("assets/assignment/case_study_scoring_clean.csv", sep=";")
-X = df.drop(["opportunity_stage_after_30_days"],axis=1).values
-y = df.opportunity_stage_after_30_days.values
-plot_learning_curve(estimator,make_scorer(roc_auc_score), X, y, axes=axes, cv=cv, n_jobs=4)
-
-plt.show()
-
-
-
-
-
-
