@@ -24,8 +24,6 @@ def load_test_tuple():
     return model, example
 
 
-
-
 def test_output_shape(load_test_tuple):
     """ test if model outputs binary classification probem
     """

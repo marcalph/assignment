@@ -23,7 +23,7 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"README": "Hello <user>, no UI is available at the moment please go to the default '/docs' route"}
+    return {"READ ME": "Hello dear User, no UI is available at the moment please go to the default '/docs' route"}
 
 
 @app.post("/predict")
