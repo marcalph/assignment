@@ -7,6 +7,9 @@ EXPOSE 8000
 ADD ./demo/requirements.txt .
 RUN python -m pip install -r requirements.txt
 
+
+COPY ./assets/ /assets/
+
 WORKDIR /app
 ADD ./src /app
 

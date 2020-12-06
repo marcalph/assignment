@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  docto:
+    image: docto
+    build:
+      context: ..
+      dockerfile: ./demo/Dockerfile
+    ports: 
+      - 8000:8000

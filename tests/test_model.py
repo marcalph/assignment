@@ -10,6 +10,7 @@
 import joblib
 import pytest
 import pandas as pd
+import numpy as np
 
 
 @pytest.fixture
@@ -18,9 +19,11 @@ def load_test_tuple():
     """
     model = joblib.load("assets/models/simple.pkl")
     df = pd.read_csv("assets/assignment/case_study_scoring_clean.csv", sep=";")\
-        .drop(["opportunity_stage_after_30_days"],axis=1)
+    .drop(["opportunity_stage_after_30_days"],axis=1)
     example = df.sample(1).values
     return model, example
+
+
 
 
 def test_output_shape(load_test_tuple):
@@ -39,17 +42,6 @@ def test_output_range(load_test_tuple):
     model, example = load_test_tuple
     print(model.predict(example))
     print(model.predict_proba(example))
-    assert sum(model.predict_proba(example)) == 2
-
-
-
-
-# @pytest.fixture
-# def vals():
-#     a=1
-#     return a,a
-
-# def test_val(vals):
-#     assert vals == (1,1)
+    assert np.sum(model.predict_proba(example)) == 1
 
 
