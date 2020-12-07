@@ -36,6 +36,6 @@ def generate_report(df, output_filename):
 
 
 
-generate_report(df, "assets/wip/report_raw.html")
-generate_report(cleandf, "assets/wip/report_clean.html")
+generate_report(df, "assets/output/report_raw.html")
+generate_report(cleandf, "assets/output/report_clean.html")
 

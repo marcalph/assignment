@@ -1,5 +1,6 @@
 .vscode
-assets/
 __pycache__/
-README.md
 .coverage
+assets/*
+!assets/output
+
