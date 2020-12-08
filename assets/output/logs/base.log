@@ -1,0 +1,140 @@
+2020-12-05 - INFO - baseline_mock.py/search_baseline - started
+2020-12-05 - INFO - print - LR parameters {'C': 0.1, 'l1_ratio': 0.5, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-05 - INFO - print - train auc :  0.7735, test auc : 0.7130
+2020-12-05 - INFO - print - LR parameters {'C': 0.1, 'l1_ratio': 0.5, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-05 - INFO - print - train auc :  0.7748, test auc : 0.7108
+2020-12-05 - INFO - print - LR parameters {'C': 0.1, 'l1_ratio': 0.25, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-05 - INFO - print - train auc :  0.7768, test auc : 0.7049
+2020-12-05 - INFO - print - LR parameters {'C': 0.1, 'l1_ratio': 0.25, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-05 - INFO - print - train auc :  0.7780, test auc : 0.6973
+2020-12-05 - INFO - print - LR parameters {'C': 0.1, 'l1_ratio': 0.5, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-05 - INFO - print - train auc :  0.7760, test auc : 0.7003
+2020-12-05 - INFO - print - LR parameters {'C': 0.1, 'l1_ratio': 0.25, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-05 - INFO - print - train auc :  0.7742, test auc : 0.7115
+2020-12-05 - INFO - print - LR parameters {'C': 0.1, 'l1_ratio': 0.25, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-05 - INFO - print - train auc :  0.7766, test auc : 0.7031
+2020-12-05 - INFO - print - LR parameters {'C': 0.1, 'l1_ratio': 0.25, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-05 - INFO - print - train auc :  0.7750, test auc : 0.7094
+2020-12-05 - INFO - print - LR parameters {'C': 0.1}
+2020-12-05 - INFO - print - train auc :  0.7751, test auc : 0.7075
+2020-12-05 - INFO - print - LR parameters {'C': 0.1, 'l1_ratio': 0.0, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-05 - INFO - print - train auc :  0.7735, test auc : 0.7136
+2020-12-05 - INFO - baseline_mock.py/search_baseline - ended in 788.3 sec
+2020-12-05 - INFO - baseline_mock.py/search_baseline - started
+2020-12-05 - INFO - print - LR parameters {'C': 0.01}
+2020-12-05 - INFO - print - train auc :  0.7604, test auc : 0.7069
+2020-12-05 - INFO - print - LR parameters {'C': 0.01, 'l1_ratio': 0.25, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-05 - INFO - print - train auc :  0.7591, test auc : 0.7043
+2020-12-05 - INFO - print - LR parameters {'C': 0.01, 'l1_ratio': 0.0, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-05 - INFO - print - train auc :  0.7626, test auc : 0.7005
+2020-12-05 - INFO - print - LR parameters {'C': 0.01, 'l1_ratio': 0.0, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-05 - INFO - print - train auc :  0.7574, test auc : 0.7154
+2020-12-05 - INFO - print - LR parameters {'C': 0.01, 'l1_ratio': 0.25, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-05 - INFO - print - train auc :  0.7589, test auc : 0.7083
+2020-12-05 - INFO - print - LR parameters {'C': 0.01}
+2020-12-05 - INFO - print - train auc :  0.7591, test auc : 0.7090
+2020-12-05 - INFO - print - LR parameters {'C': 0.01, 'l1_ratio': 0.0, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-05 - INFO - print - train auc :  0.7599, test auc : 0.7034
+2020-12-05 - INFO - print - LR parameters {'C': 0.01}
+2020-12-05 - INFO - print - train auc :  0.7575, test auc : 0.7145
+2020-12-05 - INFO - print - LR parameters {'C': 0.01, 'l1_ratio': 0.25, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-05 - INFO - print - train auc :  0.7616, test auc : 0.7039
+2020-12-05 - INFO - print - LR parameters {'C': 0.01}
+2020-12-05 - INFO - print - train auc :  0.7605, test auc : 0.7046
+2020-12-05 - INFO - baseline_mock.py/search_baseline - ended in 793.1 sec
+2020-12-06 - INFO - baseline_mock.py/search_baseline - started
+2020-12-06 - INFO - print - LR parameters {'C': 0.01, 'l1_ratio': 0.0, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-06 - INFO - print - train auc :  0.7579, test auc : 0.7054
+2020-12-06 - INFO - print - LR parameters {'C': 0.01, 'l1_ratio': 0.0, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-06 - INFO - print - train auc :  0.7639, test auc : 0.7028
+2020-12-06 - INFO - print - LR parameters {'C': 0.01}
+2020-12-06 - INFO - print - train auc :  0.7605, test auc : 0.7090
+2020-12-06 - INFO - print - LR parameters {'C': 0.01, 'l1_ratio': 0.25, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-06 - INFO - print - train auc :  0.7560, test auc : 0.7131
+2020-12-06 - INFO - print - LR parameters {'C': 0.01, 'l1_ratio': 0.25, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-06 - INFO - print - train auc :  0.7601, test auc : 0.6997
+2020-12-06 - INFO - print - LR parameters {'C': 0.01, 'l1_ratio': 0.25, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-06 - INFO - print - train auc :  0.7590, test auc : 0.7059
+2020-12-06 - INFO - print - LR parameters {'C': 0.01, 'l1_ratio': 0.0, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-06 - INFO - print - train auc :  0.7620, test auc : 0.7046
+2020-12-06 - INFO - print - LR parameters {'C': 0.01}
+2020-12-06 - INFO - print - train auc :  0.7590, test auc : 0.7075
+2020-12-06 - INFO - print - LR parameters {'C': 0.01}
+2020-12-06 - INFO - print - train auc :  0.7569, test auc : 0.7154
+2020-12-06 - INFO - print - LR parameters {'C': 0.01, 'l1_ratio': 0.0, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-06 - INFO - print - train auc :  0.7613, test auc : 0.7058
+2020-12-06 - INFO - baseline_mock.py/search_baseline - ended in 2379.5 sec
+2020-12-06 - INFO - baseline_mock.py/search_baseline - started
+2020-12-06 - INFO - print - LR parameters {'C': 0.01}
+2020-12-06 - INFO - print - train auc :  0.7579, test auc : 0.7053
+2020-12-06 - INFO - print - LR parameters {'C': 0.01, 'l1_ratio': 0.0, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-06 - INFO - print - train auc :  0.7639, test auc : 0.7028
+2020-12-06 - INFO - print - LR parameters {'C': 0.01}
+2020-12-06 - INFO - print - train auc :  0.7605, test auc : 0.7091
+2020-12-06 - INFO - print - LR parameters {'C': 0.01, 'l1_ratio': 0.25, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-06 - INFO - print - train auc :  0.7560, test auc : 0.7131
+2020-12-06 - INFO - print - LR parameters {'C': 0.01, 'l1_ratio': 0.25, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-06 - INFO - print - train auc :  0.7601, test auc : 0.6997
+2020-12-06 - INFO - print - LR parameters {'C': 0.01, 'l1_ratio': 0.25, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-06 - INFO - print - train auc :  0.7590, test auc : 0.7059
+2020-12-06 - INFO - print - LR parameters {'C': 0.01}
+2020-12-06 - INFO - print - train auc :  0.7620, test auc : 0.7046
+2020-12-06 - INFO - print - LR parameters {'C': 0.01}
+2020-12-06 - INFO - print - train auc :  0.7590, test auc : 0.7075
+2020-12-06 - INFO - print - LR parameters {'C': 0.01}
+2020-12-06 - INFO - print - train auc :  0.7569, test auc : 0.7154
+2020-12-06 - INFO - print - LR parameters {'C': 0.01}
+2020-12-06 - INFO - print - train auc :  0.7613, test auc : 0.7058
+2020-12-06 - INFO - baseline_mock.py/search_baseline - ended in 1003.0 sec
+2020-12-07 - INFO - baseline_mock.py/search_baseline - started
+2020-12-07 - INFO - print - LR parameters {'C': 0.1333521432163324, 'l1_ratio': 0.5, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-07 - INFO - print - train auc :  0.7735, test auc : 0.7123
+2020-12-07 - INFO - print - LR parameters {'C': 0.1333521432163324, 'l1_ratio': 0.5, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-07 - INFO - print - train auc :  0.7748, test auc : 0.7109
+2020-12-07 - INFO - print - LR parameters {'C': 0.1333521432163324, 'l1_ratio': 0.125, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-07 - INFO - print - train auc :  0.7768, test auc : 0.7045
+2020-12-07 - INFO - print - LR parameters {'C': 0.1333521432163324, 'l1_ratio': 0.375, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-07 - INFO - print - train auc :  0.7780, test auc : 0.6967
+2020-12-07 - INFO - print - LR parameters {'C': 0.1333521432163324, 'l1_ratio': 0.5, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-07 - INFO - print - train auc :  0.7760, test auc : 0.7009
+2020-12-07 - INFO - print - LR parameters {'C': 0.1333521432163324, 'l1_ratio': 0.25, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-07 - INFO - print - train auc :  0.7742, test auc : 0.7117
+2020-12-07 - INFO - print - LR parameters {'C': 0.1333521432163324, 'l1_ratio': 0.25, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-07 - INFO - print - train auc :  0.7766, test auc : 0.7032
+2020-12-07 - INFO - print - LR parameters {'C': 0.1333521432163324, 'l1_ratio': 0.5, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-07 - INFO - print - train auc :  0.7750, test auc : 0.7092
+2020-12-07 - INFO - print - LR parameters {'C': 0.1333521432163324, 'l1_ratio': 0.125, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-07 - INFO - print - train auc :  0.7750, test auc : 0.7083
+2020-12-07 - INFO - print - LR parameters {'C': 0.1333521432163324, 'l1_ratio': 0.125, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-07 - INFO - print - train auc :  0.7735, test auc : 0.7137
+2020-12-07 - INFO - baseline_mock.py/search_baseline - ended in 747.3 sec
+2020-12-07 - INFO - baseline_mock.py/plot_learning_curves - started
+2020-12-07 - INFO - baseline_mock.py/plot_learning_curves - started
+2020-12-07 - INFO - baseline_mock.py/plot_learning_curves - ended in 18.4 sec
+2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - started
+2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - ended in 15.4 sec
+2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - started
+2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - ended in 14.6 sec
+2020-12-07 - INFO - baseline_mock.py/plot_learning_curves - started
+2020-12-07 - INFO - baseline_mock.py/plot_learning_curves - ended in 17.3 sec
+2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - started
+2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - ended in 14.2 sec
+2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - started
+2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - ended in 13.9 sec
+2020-12-07 - INFO - baseline_mock.py/plot_learning_curves - started
+2020-12-07 - INFO - baseline_mock.py/plot_learning_curves - ended in 17.7 sec
+2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - started
+2020-12-07 - INFO - baseline_mock.py/plot_learning_curves - started
+2020-12-07 - INFO - baseline_mock.py/plot_learning_curves - ended in 17.3 sec
+2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - started
+2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - ended in 15.1 sec
+2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - started
+2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - ended in 14.3 sec
+2020-12-07 - INFO - baseline_mock.py/plot_learning_curves - started
+2020-12-07 - INFO - baseline_mock.py/plot_learning_curves - ended in 17.6 sec
+2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - started
+2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - ended in 14.5 sec
+2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - started
+2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - ended in 14.2 sec
+2020-12-08 - INFO - baseline_mock.py/train_and_serialize - started
+2020-12-08 - INFO - baseline_mock.py/train_and_serialize - ended in 2.2 sec

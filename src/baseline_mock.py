@@ -15,7 +15,7 @@ from sklearn.metrics import roc_auc_score, make_scorer
 import click
 import joblib
 
-from utils.train import *
+from utils.review import *
 
 from utils.log import logger, logthis
 extra_args = { "funcname_override" : "print"}
@@ -27,7 +27,7 @@ np.random.seed(42)
 @logthis
 def search_baseline(df, shuffle_split_strategy):
     """ replicate described baseline with clean nested CV strategy
-        being one of stratified shuffle split, repeated  strat kfold, repeated kfold 
+        being one of stratified shuffle split, repeated  strat kfold, repeated kfold
     """
     X = df.drop(["opportunity_stage_after_30_days", "has_last_inbound_lead"],axis=1).values
     y = df.opportunity_stage_after_30_days.values
@@ -73,14 +73,11 @@ def nonnested_search_baseline(df, shuffle_split_strategy):
 
 
 @logthis
-def train_simple(df):
+def train_and_serialize(clf, X, y):
     """ train and serialize simple estimator
     """
-    X = df.drop(["opportunity_stage_after_30_days"],axis=1).values
-    y = df.opportunity_stage_after_30_days.values
-    clf = LogisticRegression(class_weight="balanced")
     clf.fit(X, y)
-    joblib.dump(clf, 'assets/models/simple.pkl')
+    joblib.dump(clf, 'assets/models/baseline.pkl')
 
 
 
@@ -124,19 +121,22 @@ def generate_incorrect_report(incorrect_list, columns):
 @click.command()
 @click.option("--search", is_flag=True)
 @click.option("--diagnose", is_flag=True)
+@click.option("--train", is_flag=True)
 def main(**kwargs):
     df = pd.read_csv("assets/assignment/case_study_scoring_clean.csv", sep=";")
     sss = StratifiedShuffleSplit(n_splits=10, test_size=.2, random_state=42)
     X = df.drop(["opportunity_stage_after_30_days"],axis=1).values
     y = df.opportunity_stage_after_30_days.values    
     clf = LogisticRegression(C=.1, penalty="elasticnet", solver="saga", l1_ratio=0.25, class_weight="balanced")
-    if kwargs['search']:
+    if kwargs["search"]:
         search_baseline(df, sss)
-    if kwargs['diagnose']:
+    if kwargs["diagnose"]:
         plot_learning_curves(clf,make_scorer(roc_auc_score), X, y, filename="assets/ouput/LC_baseline_mock.png", cv=sss, n_jobs=3)
         cv_confusion_matrix(clf, X, y, sss, filename="assets/output/CM_baseline_mock.png", normalize=False)
         cv_confusion_matrix(clf, X, y, sss, filename="assets/output/CMprec_baseline_mock.png", normalize=True)
-
+    if kwargs["train"]:
+        train_and_serialize(clf, X, y)
+        print("train")
 
 
 

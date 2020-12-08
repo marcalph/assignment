@@ -22,8 +22,7 @@ extra_args = { "funcname_override" : "print"}
 @logthis
 def plot_learning_curves(clf, scoring, X, y, filename, axes=None, ylim=None, cv=None,
                         n_jobs=None, train_sizes=np.linspace(.1, 1.0, 5)):
-    """ Generate 3 plots: the test and training learning curve, the training
-        samples vs fit times curve, the fit times vs score curve.
+    """ generate learning curves and scalability for a sklearn model
     """
     if axes is None:
         _, axes = plt.subplots(1, 2, figsize=(10, 5))
@@ -48,7 +47,7 @@ def plot_learning_curves(clf, scoring, X, y, filename, axes=None, ylim=None, cv=
                  marker="o",
                  ax=axes[0]).set_title("LC")
 
-    # n_samples vs fit_times
+    # n_samples x fit_times
     sns.lineplot(data=pd.DataFrame({"Sample size":sizes, "Fitting time":fit_times.reshape(-1)}),
                  x="Sample size", 
                  y="Fitting time", 

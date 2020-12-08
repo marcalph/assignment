@@ -6,5 +6,7 @@ services:
     build:
       context: ..
       dockerfile: ./demo/Dockerfile
+    volumes:
+      - ./volume:/volume
     ports: 
       - 8000:8000
