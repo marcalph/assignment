@@ -10,7 +10,7 @@ This README is the accompagnying deliverable document to the given case study. I
 Its main sections match the measures of improvements steps that are stated in the case study - these have driven the work. 
 To showcase working mechanics, I choose a github repository for code, and github notes/issues for tasks break-down.  
   
-Codes, reports and figures can be found in [here](https://github.com/marcalph/assignment).  
+Codes, reports and figures can be found in [here](https://github.com/marcalph/assignment) (provided you are not already reading this on github).  
   
 > While this document is hopefully not hard to read, I strongly advise the reader to acquaint him/(her)self with these sections through the corresponding project board, [here](https://github.com/marcalph/assignment/projects/1).  
 The cards offer a more practical overview. A simple Kaban was used.
@@ -66,7 +66,7 @@ The chosen pipeline, is described hereafter :
 6. Exposition (which is viewed as mean to end-to-end testing and UATs)
 
 
-A detailed description of this section can be found [here](assets/output/working_doc/baseline_mock.md)
+A detailed description of this section can be found [here](baseline_mock.md)
 
 
 ## Model Interpretability
