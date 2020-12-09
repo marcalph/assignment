@@ -28,18 +28,20 @@ The cards offer a more practical overview through a Kanban.
 
 #### Repo checks
 This repository follows my usual code layout for a work project.  
-As a mean to enforce good data science practices, I have tried to include traditionnal software engineering tools :
+As a mean to enforce good data science practices, I have tried to include traditionnal software engineering tools:  
+
 - an src layout;
 - unit tests;
 - code linting & formatting;
-- ~~typing~~*;
+- ~~typing~~\*;
 - a working demo.
 
 \* well...ok maybe I fell short of time at some point
   
 #### Repo description
   
-The main folders of this repository are:
+The main folders of this repository are:  
+
 - assets \> basically all the static files;
 - demo \> the demo contianer configuration files;
 - src \> the actual code splitted into scripts;
@@ -175,7 +177,7 @@ Which is a relatively easy to midly painful task given the model (recoding logis
 
 ## Demo / Staging environment
 
-I feel that the whole demo part was covered in the baseline.
+This part is covered in the baseline.
 
 
 
