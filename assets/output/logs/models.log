@@ -1,0 +1,163 @@
+2020-12-09 - INFO - eda.py/generate_report - started
+2020-12-09 - INFO - eda.py/generate_report - ended in 67.9 sec
+2020-12-09 - INFO - models.py/process - started
+2020-12-09 - INFO - print - (44436, 42)
+2020-12-09 - INFO - print - (44436, 37)
+2020-12-09 - INFO - print - (44436, 36)
+2020-12-09 - INFO - print - (44436, 40)
+2020-12-09 - INFO - models.py/process - ended in 0.5 sec
+2020-12-09 - INFO - models.py/search_model - started
+2020-12-09 - INFO - print - LR parameters {'C': 5.623413251903491}
+2020-12-09 - INFO - print - train auc :  0.6427, test auc : 0.5886
+2020-12-09 - INFO - print - LR parameters {'C': 5.623413251903491}
+2020-12-09 - INFO - print - train auc :  0.6403, test auc : 0.5950
+2020-12-09 - INFO - print - LR parameters {'C': 0.1333521432163324}
+2020-12-09 - INFO - print - train auc :  0.6462, test auc : 0.5873
+2020-12-09 - INFO - print - LR parameters {'C': 5.623413251903491}
+2020-12-09 - INFO - print - train auc :  0.6518, test auc : 0.5876
+2020-12-09 - INFO - print - LR parameters {'C': 0.8659643233600653}
+2020-12-09 - INFO - print - train auc :  0.6379, test auc : 0.5885
+2020-12-09 - INFO - print - LR parameters {'C': 0.1333521432163324}
+2020-12-09 - INFO - print - train auc :  0.6438, test auc : 0.6088
+2020-12-09 - INFO - print - LR parameters {'C': 0.8659643233600653}
+2020-12-09 - INFO - print - train auc :  0.6402, test auc : 0.5948
+2020-12-09 - INFO - print - LR parameters {'C': 0.8659643233600653, 'l1_ratio': 0.5, 'penalty': 'elasticnet', 'solver': 'saga'}
+2020-12-09 - INFO - print - train auc :  0.6374, test auc : 0.5953
+2020-12-09 - INFO - print - LR parameters {'C': 0.8659643233600653}
+2020-12-09 - INFO - print - train auc :  0.6390, test auc : 0.5948
+2020-12-09 - INFO - print - LR parameters {'C': 0.1333521432163324}
+2020-12-09 - INFO - print - train auc :  0.6378, test auc : 0.6142
+2020-12-09 - INFO - models.py/search_model - ended in 864.7 sec
+2020-12-09 - INFO - model.py/process_tree - started
+2020-12-09 - INFO - print - (44436, 42)
+2020-12-09 - INFO - print - (44436, 37)
+2020-12-09 - INFO - print - (44436, 36)
+2020-12-09 - INFO - print - (44436, 40)
+2020-12-09 - INFO - model.py/process_tree - ended in 0.6 sec
+2020-12-09 - INFO - model.py/search_model - started dry run
+2020-12-09 - INFO - print - LR parameters {'lambda': 0.7000000000000001}
+2020-12-09 - INFO - print - train auc :  0.9902, test auc : 0.9367
+2020-12-09 - INFO - print - LR parameters {'lambda': 0.9}
+2020-12-09 - INFO - print - train auc :  0.9901, test auc : 0.9391
+2020-12-09 - INFO - print - LR parameters {'lambda': 0.5}
+2020-12-09 - INFO - print - train auc :  0.9897, test auc : 0.9489
+2020-12-09 - INFO - print - LR parameters {'lambda': 0.30000000000000004}
+2020-12-09 - INFO - print - train auc :  0.9900, test auc : 0.9460
+2020-12-09 - INFO - print - LR parameters {'lambda': 0.1}
+2020-12-09 - INFO - print - train auc :  0.9899, test auc : 0.9435
+2020-12-09 - INFO - print - LR parameters {'lambda': 0.30000000000000004}
+2020-12-09 - INFO - print - train auc :  0.9905, test auc : 0.9374
+2020-12-09 - INFO - print - LR parameters {'lambda': 0.7000000000000001}
+2020-12-09 - INFO - print - train auc :  0.9899, test auc : 0.9439
+2020-12-09 - INFO - print - LR parameters {'lambda': 0.7000000000000001}
+2020-12-09 - INFO - print - train auc :  0.9899, test auc : 0.9500
+2020-12-09 - INFO - print - LR parameters {'lambda': 0.1}
+2020-12-09 - INFO - print - train auc :  0.9905, test auc : 0.9397
+2020-12-09 - INFO - print - LR parameters {'lambda': 0.9}
+2020-12-09 - INFO - print - train auc :  0.9899, test auc : 0.9404
+2020-12-09 - INFO - model.py/search_model - ended in 57.3 sec
+
+
+
+2020-12-09 - INFO - model_architecture.py/process_tree - started
+2020-12-09 - INFO - print - (44436, 42)
+2020-12-09 - INFO - print - (44436, 37)
+2020-12-09 - INFO - print - (44436, 36)
+2020-12-09 - INFO - print - (44436, 40)
+2020-12-09 - INFO - model_architecture.py/process_tree - ended in 0.5 sec
+2020-12-09 - INFO - model_architecture.py/search_model - started
+2020-12-09 - INFO - print - LR parameters {'boosting_type': 'gbdt', 'num_leaves': 30, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
+2020-12-09 - INFO - print - train auc :  0.9901, test auc : 0.9677
+2020-12-09 - INFO - print - LR parameters {'boosting_type': 'gbdt', 'num_leaves': 40, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
+2020-12-09 - INFO - print - train auc :  0.9899, test auc : 0.9680
+2020-12-09 - INFO - print - LR parameters {'boosting_type': 'gbdt', 'num_leaves': 30, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
+2020-12-09 - INFO - print - train auc :  0.9896, test auc : 0.9700
+2020-12-09 - INFO - print - LR parameters {'boosting_type': 'gbdt', 'num_leaves': 30, 'reg_alpha': 1.0, 'reg_lambda': 4.641588833612778}
+2020-12-09 - INFO - print - train auc :  0.9898, test auc : 0.9675
+2020-12-09 - INFO - print - LR parameters {'boosting_type': 'gbdt', 'num_leaves': 40, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
+2020-12-09 - INFO - print - train auc :  0.9899, test auc : 0.9656
+2020-12-09 - INFO - print - LR parameters {'boosting_type': 'gbdt', 'num_leaves': 40, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
+2020-12-09 - INFO - print - train auc :  0.9903, test auc : 0.9677
+2020-12-09 - INFO - print - LR parameters {'boosting_type': 'gbdt', 'num_leaves': 40, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
+2020-12-09 - INFO - print - train auc :  0.9897, test auc : 0.9685
+2020-12-09 - INFO - print - LR parameters {'boosting_type': 'gbdt', 'num_leaves': 35, 'reg_alpha': 1.0, 'reg_lambda': 4.641588833612778}
+2020-12-09 - INFO - print - train auc :  0.9898, test auc : 0.9698
+2020-12-09 - INFO - print - LR parameters {'boosting_type': 'gbdt', 'num_leaves': 30, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
+2020-12-09 - INFO - print - train auc :  0.9904, test auc : 0.9658
+2020-12-09 - INFO - print - LR parameters {'boosting_type': 'gbdt', 'num_leaves': 30, 'reg_alpha': 1.0, 'reg_lambda': 4.641588833612778}
+2020-12-09 - INFO - print - train auc :  0.9898, test auc : 0.9711
+2020-12-09 - INFO - model_architecture.py/search_model - ended in 1182.8 sec
+2020-12-09 - INFO - model_architecture.py/process_tree - started
+2020-12-09 - INFO - print - (44436, 42)
+2020-12-09 - INFO - print - (44436, 37)
+2020-12-09 - INFO - print - (44436, 36)
+2020-12-09 - INFO - print - (44436, 40)
+2020-12-09 - INFO - model_architecture.py/process_tree - ended in 0.6 sec
+2020-12-09 - INFO - model_architecture.py/search_model - started
+2020-12-09 - INFO - print - LR parameters {'boosting_type': 'gbdt', 'num_leaves': 30, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
+2020-12-09 - INFO - print - train avgP :  0.9458, test avgP : 0.7811
+2020-12-09 - INFO - print - LR parameters {'boosting_type': 'gbdt', 'num_leaves': 40, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
+2020-12-09 - INFO - print - train avgP :  0.9449, test avgP : 0.7844
+2020-12-09 - INFO - print - LR parameters {'boosting_type': 'gbdt', 'num_leaves': 35, 'reg_alpha': 1.0, 'reg_lambda': 4.641588833612778}
+2020-12-09 - INFO - print - train avgP :  0.9435, test avgP : 0.7818
+2020-12-09 - INFO - print - LR parameters {'boosting_type': 'gbdt', 'num_leaves': 35, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
+2020-12-09 - INFO - print - train avgP :  0.9448, test avgP : 0.7836
+2020-12-09 - INFO - print - LR parameters {'boosting_type': 'gbdt', 'num_leaves': 40, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
+2020-12-09 - INFO - print - train avgP :  0.9440, test avgP : 0.7755
+2020-12-09 - INFO - print - LR parameters {'boosting_type': 'gbdt', 'num_leaves': 30, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
+2020-12-09 - INFO - print - train avgP :  0.9475, test avgP : 0.7928
+2020-12-09 - INFO - print - LR parameters {'boosting_type': 'gbdt', 'num_leaves': 40, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
+2020-12-09 - INFO - print - train avgP :  0.9442, test avgP : 0.7922
+2020-12-09 - INFO - print - LR parameters {'boosting_type': 'gbdt', 'num_leaves': 40, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
+2020-12-09 - INFO - print - train avgP :  0.9458, test avgP : 0.7840
+2020-12-09 - INFO - print - LR parameters {'boosting_type': 'gbdt', 'num_leaves': 40, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
+2020-12-09 - INFO - print - train avgP :  0.9479, test avgP : 0.7644
+2020-12-09 - INFO - print - LR parameters {'boosting_type': 'gbdt', 'num_leaves': 30, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
+2020-12-09 - INFO - print - train avgP :  0.9444, test avgP : 0.7877
+2020-12-09 - INFO - model_architecture.py/search_model - ended in 1294.1 sec
+2020-12-09 - INFO - model_architecture.py/process_tree - started
+2020-12-09 - INFO - print - (44436, 42)
+2020-12-09 - INFO - print - (44436, 37)
+2020-12-09 - INFO - print - (44436, 36)
+2020-12-09 - INFO - print - (44436, 40)
+2020-12-09 - INFO - model_architecture.py/process_tree - ended in 0.6 sec
+2020-12-09 - INFO - model_architecture.py/plot_learning_curves - started
+2020-12-09 - INFO - model_architecture.py/process_tree - started
+2020-12-09 - INFO - print - (44436, 42)
+2020-12-09 - INFO - print - (44436, 37)
+2020-12-09 - INFO - print - (44436, 36)
+2020-12-09 - INFO - print - (44436, 40)
+2020-12-09 - INFO - model_architecture.py/process_tree - ended in 0.5 sec
+2020-12-09 - INFO - model_architecture.py/plot_learning_curves - started
+2020-12-09 - INFO - model_architecture.py/process_tree - started
+2020-12-09 - INFO - print - (44436, 42)
+2020-12-09 - INFO - print - (44436, 37)
+2020-12-09 - INFO - print - (44436, 36)
+2020-12-09 - INFO - print - (44436, 40)
+2020-12-09 - INFO - model_architecture.py/process_tree - ended in 0.6 sec
+2020-12-09 - INFO - model_architecture.py/plot_learning_curves - started
+2020-12-09 - INFO - model_architecture.py/plot_learning_curves - ended in 15.9 sec
+2020-12-09 - INFO - model_architecture.py/cv_confusion_matrix - started
+2020-12-09 - INFO - model_architecture.py/cv_confusion_matrix - ended in 19.4 sec
+2020-12-09 - INFO - model_architecture.py/cv_confusion_matrix - started
+2020-12-09 - INFO - model_architecture.py/cv_confusion_matrix - ended in 11.1 sec
+2020-12-09 - INFO - model_architecture.py/process_tree - started
+2020-12-09 - INFO - print - (44436, 42)
+2020-12-09 - INFO - print - (44436, 37)
+2020-12-09 - INFO - print - (44436, 36)
+2020-12-09 - INFO - print - (44436, 40)
+2020-12-09 - INFO - model_architecture.py/process_tree - ended in 0.6 sec
+2020-12-09 - INFO - model_architecture.py/plot_learning_curves - started
+2020-12-09 - INFO - model_architecture.py/plot_learning_curves - ended in 15.0 sec
+2020-12-09 - INFO - model_architecture.py/cv_confusion_matrix - started
+2020-12-09 - INFO - model_architecture.py/cv_confusion_matrix - ended in 9.0 sec
+2020-12-09 - INFO - model_architecture.py/cv_confusion_matrix - started
+2020-12-09 - INFO - model_architecture.py/cv_confusion_matrix - ended in 8.8 sec
+2020-12-09 - INFO - model_architecture.py/process_tree - started
+2020-12-09 - INFO - print - (44436, 42)
+2020-12-09 - INFO - print - (44436, 37)
+2020-12-09 - INFO - print - (44436, 36)
+2020-12-09 - INFO - print - (44436, 40)
+2020-12-09 - INFO - model_architecture.py/process_tree - ended in 0.5 sec
+2020-12-09 - INFO - model_architecture.py/train_and_serialize - started
+2020-12-09 - INFO - model_architecture.py/train_and_serialize - ended in 0.5 sec

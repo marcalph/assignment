@@ -24,7 +24,6 @@ class CustomFormatter(logging.Formatter):
         return super(CustomFormatter, self).format(record)
 
 
-
 def logthis(fn):
     @functools.wraps(fn)
     def wrapper(*args, **kwargs):

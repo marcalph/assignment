@@ -17,14 +17,15 @@ extra_args = { "funcname_override" : "print",
 
 
 
-df = pd.read_csv("assets/assignment/case_study_scoring_raw.csv")
+df = pd.read_csv("assets/subject/case_study_scoring_raw.csv")
 df["fake_opportunity_id"] = df.fake_opportunity_id.astype(str)
 df["opportunity_creation_date"] = pd.to_datetime(df.opportunity_creation_date)
 df["fake_contact_id"] = df.fake_opportunity_id.astype(str)
 df["contact_creation_date"] = pd.to_datetime(df.contact_creation_date)
+df["postal_code"] = df.postal_code.astype(str)
 
 
-cleandf = pd.read_csv("assets/assignment/case_study_scoring_clean.csv", sep=";")
+cleandf = pd.read_csv("assets/subject/case_study_scoring_clean.csv", sep=";")
 
 
 @logthis
@@ -36,6 +37,6 @@ def generate_report(df, output_filename):
 
 
 
-generate_report(df, "assets/output/report_raw.html")
-generate_report(cleandf, "assets/output/report_clean.html")
+generate_report(df, "assets/output/reports/report_raw.html")
+generate_report(cleandf, "assets/output/reports/report_clean.html")
 

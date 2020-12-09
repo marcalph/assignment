@@ -16,7 +16,7 @@ from typing import Optional, Dict
 
 from utils.interpret import interpret_sample_lime
 
-df = pd.read_csv("/assets/assignment/case_study_scoring_clean.csv", sep=";")
+df = pd.read_csv("/assets/subject/case_study_scoring_clean.csv", sep=";")
 y = df["opportunity_stage_after_30_days"].values
 df = df.drop(["opportunity_stage_after_30_days"],axis=1)
 colnames = df.columns.values

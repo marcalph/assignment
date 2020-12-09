@@ -1,4 +1,4 @@
-2020-12-06 - INFO - baseline_mock.py/nonnested_search_baseline - started
+2020-12-06 - INFO - baseline.py/nonnested_search_baseline - started
 2020-12-06 - INFO - print - LR parameters {'C': 0.1, 'l1_ratio': 0.25, 'penalty': 'elasticnet', 'solver': 'saga'}
 2020-12-06 - INFO - print - val auc :  0.7754
 2020-12-06 - INFO - print - CV results :  {'mean_fit_time': array([1.35157146, 1.57080293, 1.6368331 , 1.58862669, 1.69156921,
@@ -281,8 +281,8 @@
        0.00171073, 0.00171091, 0.00171059, 0.00171083, 0.00171144,
        0.00173476, 0.00171576, 0.00171409, 0.0017126 , 0.00171048,
        0.0017108 , 0.00171079])}
-2020-12-06 - INFO - baseline_mock.py/nonnested_search_baseline - ended in 136.1 sec
-2020-12-06 - INFO - baseline_mock.py/nonnested_search_baseline - started
+2020-12-06 - INFO - baseline.py/nonnested_search_baseline - ended in 136.1 sec
+2020-12-06 - INFO - baseline.py/nonnested_search_baseline - started
 2020-12-06 - INFO - print - LR parameters {'C': 0.1, 'l1_ratio': 0.25, 'penalty': 'elasticnet', 'solver': 'saga'}
 2020-12-06 - INFO - print - val auc :  0.7733
 2020-12-06 - INFO - print - CV results :  {'mean_fit_time': array([0.53188527, 0.66338868, 0.65684595, 0.70030446, 0.41131856,
@@ -567,5 +567,5 @@
        0.00170521, 0.00170511, 0.00170497, 0.00170515, 0.00170493,
        0.00175718, 0.001735  , 0.00171121, 0.00170534, 0.00170485,
        0.00170555, 0.00170484])}
-2020-12-06 - INFO - baseline_mock.py/nonnested_search_baseline - ended in 216.1 sec
+2020-12-06 - INFO - baseline.py/nonnested_search_baseline - ended in 216.1 sec
 

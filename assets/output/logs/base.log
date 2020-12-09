@@ -1,4 +1,4 @@
-2020-12-05 - INFO - baseline_mock.py/search_baseline - started
+2020-12-05 - INFO - baseline.py/search_baseline - started
 2020-12-05 - INFO - print - LR parameters {'C': 0.1, 'l1_ratio': 0.5, 'penalty': 'elasticnet', 'solver': 'saga'}
 2020-12-05 - INFO - print - train auc :  0.7735, test auc : 0.7130
 2020-12-05 - INFO - print - LR parameters {'C': 0.1, 'l1_ratio': 0.5, 'penalty': 'elasticnet', 'solver': 'saga'}
@@ -19,8 +19,8 @@
 2020-12-05 - INFO - print - train auc :  0.7751, test auc : 0.7075
 2020-12-05 - INFO - print - LR parameters {'C': 0.1, 'l1_ratio': 0.0, 'penalty': 'elasticnet', 'solver': 'saga'}
 2020-12-05 - INFO - print - train auc :  0.7735, test auc : 0.7136
-2020-12-05 - INFO - baseline_mock.py/search_baseline - ended in 788.3 sec
-2020-12-05 - INFO - baseline_mock.py/search_baseline - started
+2020-12-05 - INFO - baseline.py/search_baseline - ended in 788.3 sec
+2020-12-05 - INFO - baseline.py/search_baseline - started
 2020-12-05 - INFO - print - LR parameters {'C': 0.01}
 2020-12-05 - INFO - print - train auc :  0.7604, test auc : 0.7069
 2020-12-05 - INFO - print - LR parameters {'C': 0.01, 'l1_ratio': 0.25, 'penalty': 'elasticnet', 'solver': 'saga'}
@@ -41,8 +41,8 @@
 2020-12-05 - INFO - print - train auc :  0.7616, test auc : 0.7039
 2020-12-05 - INFO - print - LR parameters {'C': 0.01}
 2020-12-05 - INFO - print - train auc :  0.7605, test auc : 0.7046
-2020-12-05 - INFO - baseline_mock.py/search_baseline - ended in 793.1 sec
-2020-12-06 - INFO - baseline_mock.py/search_baseline - started
+2020-12-05 - INFO - baseline.py/search_baseline - ended in 793.1 sec
+2020-12-06 - INFO - baseline.py/search_baseline - started
 2020-12-06 - INFO - print - LR parameters {'C': 0.01, 'l1_ratio': 0.0, 'penalty': 'elasticnet', 'solver': 'saga'}
 2020-12-06 - INFO - print - train auc :  0.7579, test auc : 0.7054
 2020-12-06 - INFO - print - LR parameters {'C': 0.01, 'l1_ratio': 0.0, 'penalty': 'elasticnet', 'solver': 'saga'}
@@ -63,8 +63,8 @@
 2020-12-06 - INFO - print - train auc :  0.7569, test auc : 0.7154
 2020-12-06 - INFO - print - LR parameters {'C': 0.01, 'l1_ratio': 0.0, 'penalty': 'elasticnet', 'solver': 'saga'}
 2020-12-06 - INFO - print - train auc :  0.7613, test auc : 0.7058
-2020-12-06 - INFO - baseline_mock.py/search_baseline - ended in 2379.5 sec
-2020-12-06 - INFO - baseline_mock.py/search_baseline - started
+2020-12-06 - INFO - baseline.py/search_baseline - ended in 2379.5 sec
+2020-12-06 - INFO - baseline.py/search_baseline - started
 2020-12-06 - INFO - print - LR parameters {'C': 0.01}
 2020-12-06 - INFO - print - train auc :  0.7579, test auc : 0.7053
 2020-12-06 - INFO - print - LR parameters {'C': 0.01, 'l1_ratio': 0.0, 'penalty': 'elasticnet', 'solver': 'saga'}
@@ -85,8 +85,8 @@
 2020-12-06 - INFO - print - train auc :  0.7569, test auc : 0.7154
 2020-12-06 - INFO - print - LR parameters {'C': 0.01}
 2020-12-06 - INFO - print - train auc :  0.7613, test auc : 0.7058
-2020-12-06 - INFO - baseline_mock.py/search_baseline - ended in 1003.0 sec
-2020-12-07 - INFO - baseline_mock.py/search_baseline - started
+2020-12-06 - INFO - baseline.py/search_baseline - ended in 1003.0 sec
+2020-12-07 - INFO - baseline.py/search_baseline - started
 2020-12-07 - INFO - print - LR parameters {'C': 0.1333521432163324, 'l1_ratio': 0.5, 'penalty': 'elasticnet', 'solver': 'saga'}
 2020-12-07 - INFO - print - train auc :  0.7735, test auc : 0.7123
 2020-12-07 - INFO - print - LR parameters {'C': 0.1333521432163324, 'l1_ratio': 0.5, 'penalty': 'elasticnet', 'solver': 'saga'}
@@ -107,34 +107,34 @@
 2020-12-07 - INFO - print - train auc :  0.7750, test auc : 0.7083
 2020-12-07 - INFO - print - LR parameters {'C': 0.1333521432163324, 'l1_ratio': 0.125, 'penalty': 'elasticnet', 'solver': 'saga'}
 2020-12-07 - INFO - print - train auc :  0.7735, test auc : 0.7137
-2020-12-07 - INFO - baseline_mock.py/search_baseline - ended in 747.3 sec
-2020-12-07 - INFO - baseline_mock.py/plot_learning_curves - started
-2020-12-07 - INFO - baseline_mock.py/plot_learning_curves - started
-2020-12-07 - INFO - baseline_mock.py/plot_learning_curves - ended in 18.4 sec
-2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - started
-2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - ended in 15.4 sec
-2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - started
-2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - ended in 14.6 sec
-2020-12-07 - INFO - baseline_mock.py/plot_learning_curves - started
-2020-12-07 - INFO - baseline_mock.py/plot_learning_curves - ended in 17.3 sec
-2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - started
-2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - ended in 14.2 sec
-2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - started
-2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - ended in 13.9 sec
-2020-12-07 - INFO - baseline_mock.py/plot_learning_curves - started
-2020-12-07 - INFO - baseline_mock.py/plot_learning_curves - ended in 17.7 sec
-2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - started
-2020-12-07 - INFO - baseline_mock.py/plot_learning_curves - started
-2020-12-07 - INFO - baseline_mock.py/plot_learning_curves - ended in 17.3 sec
-2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - started
-2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - ended in 15.1 sec
-2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - started
-2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - ended in 14.3 sec
-2020-12-07 - INFO - baseline_mock.py/plot_learning_curves - started
-2020-12-07 - INFO - baseline_mock.py/plot_learning_curves - ended in 17.6 sec
-2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - started
-2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - ended in 14.5 sec
-2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - started
-2020-12-07 - INFO - baseline_mock.py/cv_confusion_matrix - ended in 14.2 sec
-2020-12-08 - INFO - baseline_mock.py/train_and_serialize - started
-2020-12-08 - INFO - baseline_mock.py/train_and_serialize - ended in 2.2 sec
+2020-12-07 - INFO - baseline.py/search_baseline - ended in 747.3 sec
+2020-12-07 - INFO - baseline.py/plot_learning_curves - started
+2020-12-07 - INFO - baseline.py/plot_learning_curves - started
+2020-12-07 - INFO - baseline.py/plot_learning_curves - ended in 18.4 sec
+2020-12-07 - INFO - baseline.py/cv_confusion_matrix - started
+2020-12-07 - INFO - baseline.py/cv_confusion_matrix - ended in 15.4 sec
+2020-12-07 - INFO - baseline.py/cv_confusion_matrix - started
+2020-12-07 - INFO - baseline.py/cv_confusion_matrix - ended in 14.6 sec
+2020-12-07 - INFO - baseline.py/plot_learning_curves - started
+2020-12-07 - INFO - baseline.py/plot_learning_curves - ended in 17.3 sec
+2020-12-07 - INFO - baseline.py/cv_confusion_matrix - started
+2020-12-07 - INFO - baseline.py/cv_confusion_matrix - ended in 14.2 sec
+2020-12-07 - INFO - baseline.py/cv_confusion_matrix - started
+2020-12-07 - INFO - baseline.py/cv_confusion_matrix - ended in 13.9 sec
+2020-12-07 - INFO - baseline.py/plot_learning_curves - started
+2020-12-07 - INFO - baseline.py/plot_learning_curves - ended in 17.7 sec
+2020-12-07 - INFO - baseline.py/cv_confusion_matrix - started
+2020-12-07 - INFO - baseline.py/plot_learning_curves - started
+2020-12-07 - INFO - baseline.py/plot_learning_curves - ended in 17.3 sec
+2020-12-07 - INFO - baseline.py/cv_confusion_matrix - started
+2020-12-07 - INFO - baseline.py/cv_confusion_matrix - ended in 15.1 sec
+2020-12-07 - INFO - baseline.py/cv_confusion_matrix - started
+2020-12-07 - INFO - baseline.py/cv_confusion_matrix - ended in 14.3 sec
+2020-12-07 - INFO - baseline.py/plot_learning_curves - started
+2020-12-07 - INFO - baseline.py/plot_learning_curves - ended in 17.6 sec
+2020-12-07 - INFO - baseline.py/cv_confusion_matrix - started
+2020-12-07 - INFO - baseline.py/cv_confusion_matrix - ended in 14.5 sec
+2020-12-07 - INFO - baseline.py/cv_confusion_matrix - started
+2020-12-07 - INFO - baseline.py/cv_confusion_matrix - ended in 14.2 sec
+2020-12-08 - INFO - baseline.py/train_and_serialize - started
+2020-12-08 - INFO - baseline.py/train_and_serialize - ended in 2.2 sec
