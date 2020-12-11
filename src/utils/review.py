@@ -35,7 +35,7 @@ def plot_learning_curves(clf, scoring, X, y, filename, axes=None, ylim=None, cv=
 
     # learning curves
     sns.set_theme()
-    sizes = np.tile(train_sizes,10)
+    sizes = np.tile(train_sizes, cv.n_splits)
     sizes.sort()
     df = pd.concat([pd.DataFrame({"Sample size":sizes, "Score":train_scores.reshape(-1), "Set":"train"}),
                     pd.DataFrame({"Sample size":sizes, "Score":test_scores.reshape(-1), "Set":"CV"})])

@@ -292,6 +292,8 @@ class SimpleNN(nn.Module):
 
 
 
+from utils.log import logger, logthis
+extra_args = { "funcname_override" : "print"}
 
 @click.command()
 @click.option("--search", is_flag=True)
@@ -299,7 +301,7 @@ class SimpleNN(nn.Module):
 @click.option("--train", is_flag=True)
 def main(**kwargs):
     df = pd.read_csv("assets/subject/case_study_scoring_raw.csv")
-    sss = StratifiedShuffleSplit(n_splits=5, test_size=.2, random_state=42)
+    sss = StratifiedShuffleSplit(n_splits=10, test_size=.2, random_state=42)
     X, y, le_list = process_tree(df) 
     clf = lgb.LGBMClassifier(objective="binary", class_weight="balanced", boosting_type="gbdt", num_leaves=40, reg_alpha=1, reg_lambda=1)
     if kwargs["search"]:
