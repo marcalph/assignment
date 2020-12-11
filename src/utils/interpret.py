@@ -14,12 +14,6 @@ import lime
 import lime.lime_tabular
 
 
-from utils.log import logger, logthis
-extra_args = { "funcname_override" : "print"}
-
-
-
-@logthis
 def interpret_global_shap_linear(clf, X, y):
     """ generate shap dot plot for a linear model
         todo CV
@@ -36,7 +30,7 @@ def interpret_global_shap_linear(clf, X, y):
 
 
 
-@logthis
+
 def interpret_sample_shap_linear(clf, X, y, sample):
     """ additive force plot, todo handle spe
         todo CV
@@ -49,19 +43,15 @@ def interpret_sample_shap_linear(clf, X, y, sample):
 
 
 
-@logthis
-def interpret_sample_lime(clf, X, y, sample):
+def interpret_sample_lime(clf, X, y, sample, names):
     """ compute lime explainer and generate 
     """
-    explainer = lime.lime_tabular.LimeTabularExplainer(X, 
-                        mode="classification",
-                        training_labels=y,
-                        feature_names=sample.index.values,
-                        class_names=[0,1])
-    limexpl = explainer.explain_instance(sample, clf.predict_proba, num_features=5)
-    limexpl.save_to_file("/volume/lime_result.html")
-
-
-
-
+    explainer = lime.lime_tabular.LimeTabularExplainer(X.astype(float).astype(int), 
+                    mode="classification",
+                    training_labels=y,
+                    feature_names=names,
+                    class_names=[0,1])
+    limexpl = explainer.explain_instance(sample.astype(float).astype(int).flatten(), clf.predict_proba, num_features=10, num_samples=500)
+    limexpl.save_to_file("/volume/lime_result_lgbm.html")
+    return limexpl.as_html()
 

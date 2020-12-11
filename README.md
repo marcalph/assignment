@@ -141,7 +141,7 @@ First records show outstanding improvements over AUROC, with reported test AUC o
 Training logs can be found in the **assets/output/logs** folder.
   
 Given these huge improvements, it may be interesting to reassert relevant next steps.  
-Let's review, model performance:  
+Let's review model performance:  
   
 ![lc ><](assets/output/figs/LC_lgbm.png "LC")  
 This time learning curves (for AUROC) exhibit a saner pattern with a little bit of variance - such that the model would naturally improve with more data.  

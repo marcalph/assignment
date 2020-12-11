@@ -40,9 +40,13 @@ def logthis(fn):
 logger = logging.getLogger(__file__)
 logger.setLevel(logging.DEBUG)
 ch = logging.StreamHandler()
-fh = logging.FileHandler("assets/output/logs/models.log")
+# fh = logging.FileHandler("assets/output/logs/models.log")
 formatter = CustomFormatter("%(asctime)s - %(levelname)s - %(funcname)s - %(message)s", "%Y-%m-%d")
 ch.setFormatter(formatter)
-fh.setFormatter(formatter)
+# fh.setFormatter(formatter)
 logger.addHandler(ch)
-logger.addHandler(fh)
+# logger.addHandler(fh)
+
+
+
+

@@ -38,8 +38,7 @@ def search_baseline(df, shuffle_split_strategy):
         grid=[# elasticnet
               {"C":np.logspace(-2.5,0.75,5), "l1_ratio":np.linspace(0,.5,5), "solver":["saga"] , "penalty":["elasticnet"]},
               # ridge
-              {"C":np.logspace(-2.5,0.75,5)}
-        ]
+              {"C":np.logspace(-2.5,0.75,5)}]
         clf = LogisticRegression(class_weight="balanced")
         lr_grid = GridSearchCV(clf, grid, scoring="roc_auc", cv=5, n_jobs=3)
         lr_grid.fit(X_train, y_train)

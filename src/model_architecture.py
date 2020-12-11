@@ -17,6 +17,7 @@ import lightgbm as lgb
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from torch.utils.data import DataLoader, Dataset
 from mlxtend.classifier import StackingCVClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import make_scorer, roc_auc_score, average_precision_score 
@@ -50,8 +51,8 @@ dates = ["opportunity_creation_date",   # holidays are visible (lows)
 # arbitrary cutoff @50
 cat_hi = ["salesforce_specialty",
           "main_competitor",
-          "pms",
-          "postal_code"]                #4 zeros
+          "pms"]#,
+        #   "postal_code"]                #4 zeros
 
 
 cat_lo = ["contact_status",             # attention 8 "obsolète"
@@ -115,6 +116,7 @@ def process_tree(df):
     df["postal_code"] = df.postal_code.astype(str)
     df["has_been_recommended"] = df.has_been_recommended.astype(bool)
 
+
     # remove useless
     logger.info(df.shape, extra=extra_args)
     df = df.drop(useless, axis=1)
@@ -151,7 +153,7 @@ def process_tree(df):
 
     X = df.values
 
-    return X, y
+    return X, y, cat_hi_le+cat_lo_le
     
 
 
@@ -195,18 +197,52 @@ def search_model(X, y, shuffle_split_strategy):
 
 
 @logthis
-def train_and_serialize(clf, X, y):
+def train_and_serialize(clf, X, y, le_list):
     """ train and serialize simple estimator
     """
     clf.fit(X, y)
     joblib.dump(clf, 'assets/models/lgbm.pkl')
+    joblib.dump(le_list, 'assets/models/le_list.pkl')
+
+
+
+def process_tree_for_pred(df, le_list):
+    """ preprocessing
+    """
+    df["fake_opportunity_id"] = df.fake_opportunity_id.astype(str)
+    df["opportunity_creation_date"] = pd.to_datetime(df.opportunity_creation_date)
+    df["fake_contact_id"] = df.fake_opportunity_id.astype(str)
+    df["contact_creation_date"] = pd.to_datetime(df.contact_creation_date)
+    df["postal_code"] = df.postal_code.astype(str)
+    df["has_been_recommended"] = df.has_been_recommended.astype(bool)
+    # remove useless
+    df = df.drop(useless, axis=1)
+    # dates
+    df["opportunity_year"] = df.opportunity_creation_date.dt.year.astype(str)
+    df["opportunity_month"] = df.opportunity_creation_date.dt.month.astype(str)
+    df["opportunity_week"] = df.opportunity_creation_date.dt.week.astype(str)
+    df["contact_year"] = df.contact_creation_date.dt.year.astype(str)
+    df["contact_month"] = df.contact_creation_date.dt.month.astype(str)
+    df["contact_week"] = df.contact_creation_date.dt.week.astype(str)
+    df = df.drop(dates, axis=1)
+    for c, le in zip(cat_hi+cat_lo, le_list):
+        df[c] = le.transform(df[c].fillna("missing"))
+    
+    for c in nums:
+        df[c] = df[c].fillna(-1)
+
+    X = df.values
+    feat_names = df.columns.values
+
+    return X, feat_names
 
 
 
 class CatDataset(Dataset):
     """ torch dataset for pandas dataframe :)
+        embedding_cols = {colname: len(col.cat.categories)}
     """
-    def __init__(self, X, y, embedding_cols=embedding_cols):
+    def __init__(self, X, y, embedding_cols):
         X = X.copy()
         self.Xcat = X.loc[:, embedding_cols.keys()].copy().values.astype(np.int64)
         self.Xnum = X.drop(columns=embedding_cols.keys()).copy().values.astype(np.float32)
@@ -223,6 +259,7 @@ class CatDataset(Dataset):
 
 class SimpleNN(nn.Module):
     """ simple FFNN for tabular data
+        emedding_sizes = [(n_categories, min(30 to 50, (n_categories+1)//2))]
     """
     def __init__(self, embedding_sizes, n_num):
         super().__init__()
@@ -262,19 +299,17 @@ class SimpleNN(nn.Module):
 @click.option("--train", is_flag=True)
 def main(**kwargs):
     df = pd.read_csv("assets/subject/case_study_scoring_raw.csv")
-    sss = StratifiedShuffleSplit(n_splits=10, test_size=.2, random_state=42)
-    X, y = process_tree(df) 
+    sss = StratifiedShuffleSplit(n_splits=5, test_size=.2, random_state=42)
+    X, y, le_list = process_tree(df) 
     clf = lgb.LGBMClassifier(objective="binary", class_weight="balanced", boosting_type="gbdt", num_leaves=40, reg_alpha=1, reg_lambda=1)
     if kwargs["search"]:
         search_baseline(df, sss)
     if kwargs["diagnose"]:
-        plot_learning_curves(clf,make_scorer(average_precision_score), X, y, filename="assets/output/figs/LC_lgbm_ap.png", cv=sss, n_jobs=3)
-        cv_confusion_matrix(clf, X, y, sss, filename="assets/output/figs/CM_lgbm_ap.png", normalize=False)
-        cv_confusion_matrix(clf, X, y, sss, filename="assets/output/figs/CMprec_lgbm_ap.png", normalize=True)
+        plot_learning_curves(clf,make_scorer(roc_auc_score), X, y, filename="assets/output/figs/LC_lgbm_test.png", cv=sss, n_jobs=3)
+        cv_confusion_matrix(clf, X, y, sss, filename="assets/output/figs/CM_lgbm_test.png", normalize=False)
+        cv_confusion_matrix(clf, X, y, sss, filename="assets/output/figs/CMprec_lgbm_test.png", normalize=True)
     if kwargs["train"]:
-        train_and_serialize(clf, X, y)
-        print("train")
-
+        train_and_serialize(clf, X, y, le_list)
 
 
 

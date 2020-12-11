@@ -14,9 +14,9 @@
 
 <body>
   <main>
-    <nav class="deep-orange darken-3">
+    <nav class="light-blue darken-4">
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo center">App score</a>
+        <a href="#" class="brand-logo center">case study</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
         </ul>
       </div>
@@ -24,9 +24,8 @@
     <div class="section no-pad-bot" id="index-banner">
       <div class="container">
         <br><br>
-        <h1 class="header center black-text">Demo</h1>
+        <h5 class="header center black-text">Demo</h1>
         <div class="row center">
-          <h5 class="header col s12 light">enter a given vector</h5>
         </div>
         <br><br>
 
@@ -36,10 +35,10 @@
       <div class="row">
         <div class="col s12 m12 l12">
           <div class="row center">
-            <div class="input-field col s12">
+            <div class="input-field col s12 ">
               <i class="material-icons prefix">data_usage</i>
-              <input id="icon_prefix" type="text" class="validate">
-              <label for="icon_prefix">Vector</label>
+              <input id="input" type="text" class="validate">
+              <label for="icon_prefix" >Vector</label>
             </div>
           </div>
         </form>
@@ -47,14 +46,27 @@
     </div>
     <div class="row center">
       <div class="col s12 m12 l12">
-        <button class="btn waves-effect waves-light deep-orange darken-3" name="predict">Predict
-          <i class="material-icons right">flash_on</i>
+        <button class="btn waves-effect waves-light orange darken-4" name="predict" id="predict">Predict
+          <i class="material-icons right">whatshot</i>
         </button>
       </div>
     </div>
+    <div class="row center">
+      <div class="col s12 m12 l12">
+        <button class="btn waves-effect waves-light orange darken-4" name="interpret">interpret
+          <i class="material-icons right">highlight</i>
+        </button>
+      </div>
+      <div class="mdl-cell--12-col" id="results">
+        <span class="mdl-chip mdl-chip--contact result-template" style="display:none;">
+            <span class="mdl-chip__contact mdl-color--primary mdl-color-text--white"></span>
+            <span class="mdl-chip__text"></span>
+        </span>
+    </div>
+    </div>
     <div class="row center" id="response-container" style="display: none;">
       <div class="col s12 m12 l12">
-        <p id="response"></p>
+        <p id="response"> coucou</p>
       </div>
     </div>
   </main>
@@ -64,10 +76,10 @@
   <script src="js/init.js"></script>
 
 </body>
-<footer class="page-footer deep-orange darken-3">
+<footer class="page-footer light-blue darken-4 ">
   <div class="footer-copyright">
     <div class="container">
-    © 2020 Copyright marcalph made with magic and love
+    ©2020 Copyright marcalph made with magic and love
     <a class="grey-text text-lighten-4 right" target="_blank" href="https://github.com/marcalph">Github</a>
     </div>
   </div>

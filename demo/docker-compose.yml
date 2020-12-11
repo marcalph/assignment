@@ -8,5 +8,6 @@ services:
       dockerfile: ./demo/Dockerfile
     volumes:
       - ./volume:/volume
+      - ./front:/demo/front
     ports: 
       - 8000:8000
