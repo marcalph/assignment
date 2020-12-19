@@ -9,5 +9,5 @@ services:
     volumes:
       - ./volume:/volume
       - ./front:/demo/front
-    ports: 
+    ports:
       - 8000:8000
