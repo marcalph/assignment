@@ -1,8 +1,8 @@
 [flake8]
-select = B,B9,BLK,C,E,F,S,W
+select = B,B9,BLK,C,D,E,F,S,W
 ; S101 use of assert, but needed for testing
 per-file-ignores = tests/*:S101
 max-complexity = 10
 ignore = E501, W503
-; ignore = F401, E203
 max-line-length = 80
+docstring-convention = google
